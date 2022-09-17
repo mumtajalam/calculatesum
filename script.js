@@ -33,6 +33,49 @@ function delete_row(no) {
   document.getElementById("row" + no + "").outerHTML = "";
 }
 
-$(document).ready(function () {
-  $("tr").each(function () {});
-});
+// $(document).ready(function () {
+//   $("tr").each(function () {
+//     var totalMarks = 0;
+//     $(this)
+//       .find(".rows")
+//       .each(function () {
+//         var Marks = $(this).text();
+//         if (Marks.length !== 0) {
+//           totalMarks += parseFloat(Marks);
+//         }
+//       });
+//     $(this)
+//       .find("#TotalMarks")
+//       .html("= " + totalMarks);
+//   });
+// });
+
+// var table = document.getElementsByClassName("rows");
+// var sumVal = 0;
+
+// for (var i = 1; i < table.rows.length; i++) {
+//   sumVal += parseInt(table.rows[i].cells[2].innerHTML);
+// }
+// console.log(sumVal)
+
+function Myload() {
+  const cols = document.getElementsByTagName("input");
+  for (let index = 0; index < cols.length; index++) {
+    cols[index].addEventListener("change", function () {
+      var ls_nm = cols[index].name;
+      Total(ls_nm);
+    });
+  }
+}
+
+function Total(ls_nm) {
+  var base = documet.getElementsByName(ls_nm);
+
+  var ls_sum = 0;
+  for (let index = 0; index < base.length; index++) {
+    var ls_base = base[index].value;
+
+    ls_sum = +ls_sum + +ls_base;
+  }
+  document.getElementById(ls_nm + "_total").value = ls_sum;
+}
