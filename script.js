@@ -33,31 +33,6 @@ function delete_row(no) {
   document.getElementById("row" + no + "").outerHTML = "";
 }
 
-// $(document).ready(function () {
-//   $("tr").each(function () {
-//     var totalMarks = 0;
-//     $(this)
-//       .find(".rows")
-//       .each(function () {
-//         var Marks = $(this).text();
-//         if (Marks.length !== 0) {
-//           totalMarks += parseFloat(Marks);
-//         }
-//       });
-//     $(this)
-//       .find("#TotalMarks")
-//       .html("= " + totalMarks);
-//   });
-// });
-
-// var table = document.getElementsByClassName("rows");
-// var sumVal = 0;
-
-// for (var i = 1; i < table.rows.length; i++) {
-//   sumVal += parseInt(table.rows[i].cells[2].innerHTML);
-// }
-// console.log(sumVal)
-
 function Myload() {
   const cols = document.getElementsByTagName("input");
   for (let index = 0; index < cols.length; index++) {
